@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Gitlab Merge Request Title Autofill",
+  "description": "Autofills your GitLab Merge Requests with your first commit message as the title until #36669 is fixed.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://*/*"
+  ],
+  "content_scripts": [{
+    "matches": ["https://*/*"],
+    "js": ["mrtitlefiller.js"],
+    "run_at": "document_end"
+  }]
+}
